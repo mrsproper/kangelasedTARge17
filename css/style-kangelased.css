@@ -1,0 +1,87 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:400,700" rel=';
+
+/* ---- Globaalsed stiilid ---- */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-size: 16px;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  line-height: 20px;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* ---- Utiil klassid ---- */
+
+.container {
+  width: 1440px;
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.table-wrapper {
+  width: 100%;
+}
+
+/* ---- Tabeli stiilid ---- */
+
+table {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+table tr {
+  border: 1px solid #ddd;
+}
+
+table th,
+table td {
+  padding: 15px 20px;
+  text-align: left;
+}
+
+table th {
+  font-weight: 700;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+table tbody tr:hover {
+  background-color: #e2e2e2;
+}
+
+/* ---- Resposive ---- */
+
+@media only screen and (max-width: 767px) {
+  .table-wrapper {
+    overflow: auto;
+  }
+}
