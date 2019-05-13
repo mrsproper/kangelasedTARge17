@@ -78,6 +78,12 @@ table tbody tr:hover {
   background-color: #e2e2e2;
 }
 
+/* ---- Generator ---- */
+
+.btn, .situation{
+  margin: 12px auto 0px;
+}
+
 /* ---- Resposive ---- */
 
 @media only screen and (max-width: 767px) {
