@@ -4,91 +4,128 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style-kangelased.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
     <title>Superheroes!</title>
   </head>
   <header>
     <div class="header-images">
-        <img src="pildid/spiderman_xs.png"> 
-        <img src="pildid/kapow.png">
-        <img src="pildid/winniepooh.png">
-        <img src="pildid/boom.png">
-        <img src="pildid/joker_xs.png">
-    </div>  
+      <img src="pildid/spiderman_xs.png" />
+      <img src="pildid/kapow.png" />
+      <img src="pildid/winniepooh.png" />
+      <img src="pildid/boom.png" />
+      <img src="pildid/joker_xs.png" />
+    </div>
   </header>
   <body>
     <main class="main">
       <div class="container">
         <h1>SUPERHEROES</h1>
         <div class="table-wrapper">
-          <table>
-            <tr>
-              <th>Superhero name</th>
-              <th>Location</th>
-              <th>Real superhero?</th>
-              <th>Good/Bad</th>
-              <th>Image</th>
-            </tr>
-            <tr>
-              <td>Batman</td>
-              <td>Gotham</td>
-              <td>No</td>
-              <td>Good</td>
-              <td><img src="pildid/Batman.png" style="width:50%"</></td>
-            </tr>
-            <tr>
-              <td>Spiderman</td>
-              <td>New York</td>
-              <td>Yes</td>
-              <td>Good</td>
-              <td><img src="pildid/Spiderman.png" style="width:50%"</></td>
-            </tr>
-            <tr>
-              <td>Winnie the Pooh</td>
-              <td>London forest</td>
-              <td>No</td>
-              <td>Good</td>
-              <td><img src="pildid/Winnie.png" style="width:50%"</></td>
-            </tr>
-            <tr>
-              <td>Joker</td>
-              <td>Gotham</td>
-              <td>No</td>
-              <td>Bad</td>
-              <td><img src="pildid/Joker.png" style="width:50%"</></td>
-            </tr>
-            <tr>
-              <td>Ironman</td>
-              <td>N/A</td>
-              <td>No</td>
-              <td>Good</td>
-              <td><img src="pildid/Ironman.jpg" style="width:50%"</></td>
-            </tr>
-            <tr>
-              <td>Wolverine</td>
-              <td>N/A</td>
-              <td>Yes</td>
-              <td>Good</td>
-              <td><img src="pildid/Wolverine.jpg" style="width:50%"</></td>
-            </tr>
+          <table class="heros">
+            <thead>
+              <tr>
+                <th>Superhero name</th>
+                <th>Location</th>
+                <th>Real superhero?</th>
+                <th>Good/Bad</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="accordion">
+                <td>Batman</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Gotham</td>
+                <td>No</td>
+                <td>Good</td>
+                <td><img src="pildid/Batman.png" style="width:50%" /></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="accordion">
+                <td>Spiderman</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>New York</td>
+                <td>Yes</td>
+                <td>Good</td>
+                <td><img src="pildid/Spiderman.png" style="width:50%" /></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="accordion">
+                <td>Winnie the Pooh</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>London forest</td>
+                <td>No</td>
+                <td>Good</td>
+                <td><img src="pildid/Winnie.png" style="width:50%" /></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="accordion">
+                <td>Joker</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Gotham</td>
+                <td>No</td>
+                <td>Bad</td>
+                <td><img src="pildid/Joker.png" style="width:50%" /></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="accordion">
+                <td>Ironman</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>N/A</td>
+                <td>No</td>
+                <td>Good</td>
+                <td><img src="pildid/Ironman.jpg" style="width:50%" /></td>
+              </tr>
+            </tbody>
+            <tbody>
+              <tr class="accordion">
+                <td>Wolverine</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>N/A</td>
+                <td>Yes</td>
+                <td>Good</td>
+                <td><img src="pildid/Wolverine.jpg" style="width:50%" /></td>
+              </tr>
+            </tbody>
           </table>
         </div>
         <div class="generator-wrapper">
           <div class="btn">
-            <input type='submit' value='Generate dangerous situation' onclick='getAnswer()' />
+            <input
+              type="submit"
+              value="Generate dangerous situation"
+              onclick="getAnswer()"
+            />
           </div>
-          <div id='answerDiv' class="situation"></div>
+          <div id="answerDiv" class="situation"></div>
         </div>
       </div>
     </main>
-      <footer>
-          <img src="pildid/batman_xs.png">
-        <div class="footer-info">
-            <h1>Superheroes</h1>
-            <p>Visit us on</p>
-            <a  href="#">www.superheroes.com</a>
-        </div>
-          <img src="pildid/deadpool.png">
-      </footer>
+    <footer>
+      <img src="pildid/batman_xs.png" />
+      <div class="footer-info">
+        <h1>Superheroes</h1>
+        <p>Visit us on</p>
+        <a href="#">www.superheroes.com</a>
+      </div>
+      <img src="pildid/deadpool.png" />
+    </footer>
   </body>
 </html>
