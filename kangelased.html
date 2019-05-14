@@ -2,22 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Superheroes!</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/style-kangelased.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script type="text/javascript" charset="utf-8" src="js/script.js"></script>
-    <title>Superheroes!</title>
   </head>
-  <header>
-    <div class="header-images">
-      <img src="pildid/spiderman_xs.png" />
-      <img src="pildid/kapow.png" />
-      <img src="pildid/winniepooh.png" />
-      <img src="pildid/boom.png" />
-      <img src="pildid/joker_xs.png" />
-    </div>
-  </header>
   <body>
+    <header>
+      <div class="header-images">
+        <img src="pildid/spiderman_xs.png" />
+        <img src="pildid/kapow.png" />
+        <img src="pildid/winniepooh.png" />
+        <img src="pildid/boom.png" />
+        <img src="pildid/joker_xs.png" />
+      </div>
+    </header>
     <main class="main">
       <div class="container">
         <h1>SUPERHEROES</h1>
@@ -33,89 +33,54 @@
               </tr>
             </thead>
             <tbody>
-              <tr class="accordion">
-                <td>Batman</td>
-              </tr>
               <tr>
-                <td></td>
+                <td>Batman</td>
                 <td>Gotham</td>
                 <td>No</td>
                 <td>Good</td>
-                <td><img src="pildid/Batman.png" style="width:50%" /></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr class="accordion">
-                <td>Spiderman</td>
+                <td><img src="pildid/Batman.png" /></td>
               </tr>
               <tr>
-                <td></td>
+                <td>Spiderman</td>
                 <td>New York</td>
                 <td>Yes</td>
                 <td>Good</td>
-                <td><img src="pildid/Spiderman.png" style="width:50%" /></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr class="accordion">
-                <td>Winnie the Pooh</td>
+                <td><img src="pildid/Spiderman.png" /></td>
               </tr>
               <tr>
-                <td></td>
+                <td>Winnie the Pooh</td>
                 <td>London forest</td>
                 <td>No</td>
                 <td>Good</td>
-                <td><img src="pildid/Winnie.png" style="width:50%" /></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr class="accordion">
-                <td>Joker</td>
+                <td><img src="pildid/Winnie.png" /></td>
               </tr>
               <tr>
-                <td></td>
+                <td>Joker</td>
                 <td>Gotham</td>
                 <td>No</td>
                 <td>Bad</td>
-                <td><img src="pildid/Joker.png" style="width:50%" /></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr class="accordion">
-                <td>Ironman</td>
+                <td><img src="pildid/Joker.png" /></td>
               </tr>
               <tr>
-                <td></td>
+                <td>Ironman</td>
                 <td>N/A</td>
                 <td>No</td>
                 <td>Good</td>
-                <td><img src="pildid/Ironman.jpg" style="width:50%" /></td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr class="accordion">
-                <td>Wolverine</td>
+                <td><img src="pildid/Ironman.jpg" /></td>
               </tr>
               <tr>
-                <td></td>
+                <td>Wolverine</td>
                 <td>N/A</td>
                 <td>Yes</td>
                 <td>Good</td>
-                <td><img src="pildid/Wolverine.jpg" style="width:50%" /></td>
+                <td><img src="pildid/Wolverine.jpg" /></td>
               </tr>
             </tbody>
           </table>
         </div>
-        <div class="generator-wrapper">
-          <div class="btn">
-            <input
-              type="submit"
-              value="Generate dangerous situation"
-              onclick="getAnswer()"
-            />
-          </div>
-          <div id="answerDiv" class="situation"></div>
-        </div>
+        <a href="#" id="generate-situation">Generate a dangerous situation</a>
+        <p>Situation: <span id="answerDiv"></span></p>
+        <p>People involved: <span id="peopleInvolved"></span></p>
       </div>
     </main>
     <footer>
@@ -123,9 +88,11 @@
       <div class="footer-info">
         <h1>Superheroes</h1>
         <p>Visit us on</p>
-        <a href="#">www.superheroes.com</a>
+        <a href="/">www.superheroes.com</a>
       </div>
       <img src="pildid/deadpool.png" />
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
