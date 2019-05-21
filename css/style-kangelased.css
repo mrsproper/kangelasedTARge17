@@ -87,6 +87,14 @@ header {
   padding: 100px 0;
 }
 
+/* ---- Danger generation ---- */
+.situation-generator {
+    display: flex;
+}
+.situation-hero {
+    margin: 15px 40px;
+}
+
 /* ---- Tabeli stiilid ---- */
 
 table {
