@@ -176,6 +176,15 @@ footer {
   transition: all 0.2s ease;
 }
 
+.situation-hero select{
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color: #e2e2e2;
+    border: none;
+    
+}
+
 #generate-situation:hover {
   background-color: #333;
   color: #fff;
