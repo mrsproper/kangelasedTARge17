@@ -91,6 +91,12 @@ header {
 .situation-generator {
     display: flex;
 }
+
+.situation{
+    padding: 0px 0px 20px 20px;
+    text-align: center;
+    line-height: 30px;
+}
 .situation-hero {
     margin: 15px 40px;
 }
@@ -173,6 +179,14 @@ footer {
 #generate-situation:hover {
   background-color: #333;
   color: #fff;
+}
+
+#answerDiv{
+    font-size: 20px;
+}
+
+#peopleInvolved{
+    font-size: 30px;
 }
 
 /* ---- Responsive ---- */
