@@ -162,6 +162,11 @@ footer {
   line-height: 24px;
 }
 
+/* ---- Form buttons ---- */
+.form-buttons {
+    display: flex;
+}
+
 /* ---- Misc ---- */
 
 #generate-situation {
