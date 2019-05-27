@@ -27,16 +27,20 @@
             <a href="#" id="generate-situation">Generate a dangerous situation</a>
             <p>Situation: <span id="answerDiv"></span></p>
             <p>People involved: <span id="peopleInvolved"></span></p>
+              <button id="savingButton" onclick="savingPeople(peopleCount)">
+              Päästa!
+            </button>
+            <p id="selectedHero"><span id="peopleSaved"></span></p>
           </div>  
           <form class="situation-hero">
-            <select name="heroes">
-                <option disabled selected>Choose a hero!</option>
-              <option value="batman">Batman</option>
-              <option value="spiderman">Spiderman</option>
-              <option value="winnieThePooh">Winnie the Pooh</option>
-              <option value="joker">Joker</option>
-              <option value="ironman">Ironman</option>
-              <option value="wolverine">Wolverine</option>
+            <select name="heroes" id="heroSelect">
+              <option disabled selected value="default">Choose a hero!</option>
+              <option value="Batman">Batman</option>
+              <option value="Spiderman">Spiderman</option>
+              <option value="Winnie The Pooh">Winnie the Pooh</option>
+              <option value="Joker">Joker</option>
+              <option value="Ironman">Ironman</option>
+              <option value="Wolverine">Wolverine</option>
             </select>
           </form>
         </div>         
