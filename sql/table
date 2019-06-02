@@ -5,13 +5,14 @@ CREATE TABLE heroes(
   location VARCHAR(255),
   is_real_hero VARCHAR(3) DEFAULT 'Yes',
   state VARCHAR(4) DEFAULT 'GOOD',
+  score INT DEFAULT 0,
   thumb TEXT
 );
 
 INSERT INTO heroes (id, name, real_name, location, is_real_hero, state, thumb) VALUES
 (NULL, 'Batman', 'Bruce Wayne', 'Gotham', 'No', 'Good', 'https://www.sideshow.com/storage/product-images/904004/batman-1989-dlc_dc-comics_silo_sm.png'),
 (NULL, 'Spiderman', 'Peter Benjamin Parker', 'New York', 'Yes', 'Good', 'https://upload.wikimedia.org/wikipedia/en/thumb/2/21/Web_of_Spider-Man_Vol_1_129-1.png/250px-Web_of_Spider-Man_Vol_1_129-1.png'),
-(NULL, 'Winnie the Pooh', 'Pooh Bear', 'London forest', 'No', 'Good', 'https://m.media-amazon.com/images/M/MV5BMDQzMWQ5NDUtNjk0Zi00ODEwLWE5ODAtMzY4YjAzYTFhMzY4XkEyXkFqcGdeQXVyNzU1NzE3NTg@._V1_.jpg'),
+(NULL, 'Winnie the Pooh', 'Pooh Bear', 'London forest', 'No', 'Good', 'https://ixxidesign.azureedge.net/media/1332661/Disney-Classics-Baby-Winnie-the-Pooh-1.jpg?mode=max&width=562&height=562'),
 (NULL, 'Joker', 'Unknown', 'Gotham', 'No', 'Bad', 'https://image.winudf.com/v2/image/Y29tLk5ld0pva2VyV2FsbHBhcGVySEQyMDE4LmF1cmFza21fc2NyZWVuXzRfMTUyNDMwODAyMV8wMjQ/screen-4.jpg?h=800&fakeurl=1'),
 (NULL, 'Ironman', 'Anthony Edward "Tony" Stark', 'N/A', 'No', 'Good', 'https://blog.it.playstation.com/files/2019/04/IronMan.jpg'),
 (NULL, 'Wolverine', 'James Howlett', 'N/A', 'Yes', 'Good', 'https://www.syfy.com/sites/syfy/files/styles/1200x680/public/2018/06/return_of_wolverine_hero.jpg')
