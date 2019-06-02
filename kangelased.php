@@ -9,20 +9,6 @@ if (isSet($_POST["rescue"])) {
     header("Location: kangelased.php");
 }
 
-if (isset($_REQUEST["vaatamisid"])) {
-    header("Location: vaatamine.php?vaatamisid=" + $_REQUEST["vaatamisid"]);
-}
-
-if (isset($_REQUEST["muutmisid"])) {
-    header("Location: muutmine.php?muutmisid=" + $_REQUEST["muutmisid"]);
-}
-
-if (isSet($_REQUEST["kustutusid"])) {
-    kustutaLoom($_REQUEST["kustutusid"]);
-    header("Location: admin.php");
-    exit();
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -49,64 +35,59 @@ if (isSet($_REQUEST["kustutusid"])) {
 <main class="main">
     <div class="container">
         <h1>SUPERHEROES</h1>
-        <form action="?" method="post">
-            <div class="situation-generator">
+        <a href="addHero.php">Add new hero</a>
+        <br>
+        <a href="deleteHero.php">Delete hero</a>
+    </div>
+    <form action="?" method="post">
+        <div class="situation-generator">
 
-                <div class="situation">
-                    <a href="#" id="generate-situation">Generate a dangerous situation</a>
-                    <p>Situation: <span id="answerDiv"></span></p>
-                    <p>People involved: <span id="peopleInvolved"></span></p>
-                    <input id="savingButton" type="submit" name="rescue" value="Rescue people!"
-                           onclick="savingPeople(peopleCount)"/>
-                    <p id="selectedHero"><span id="peopleSaved"></span></p>
-                </div>
-                <div class="situation-hero">
-                    <select name="personName" id="heroSelect">
-                        <option disabled selected value="default">Choose a hero!</option>
-                        <?php foreach ($heroesList as $person) : ?>
-                            <option value="<?= $person->name ?>" name="personName"><?= $person->name ?></option>
-                        <?php endforeach; ?>
-                    </select>
-                </div>
-
+            <div class="situation">
+                <a href="#" id="generate-situation">Generate a dangerous situation</a>
+                <p>Situation: <span id="answerDiv"></span></p>
+                <p>People involved: <span id="peopleInvolved"></span></p>
+                <input id="savingButton" type="submit" name="rescue" value="Rescue people!"
+                       onclick="savingPeople(peopleCount)"/>
+                <p id="selectedHero"><span id="peopleSaved"></span></p>
             </div>
-        </form>
-        <div class="table-wrapper">
-            <table class="heros">
-                <thead>
+            <div class="situation-hero">
+                <select name="personName" id="heroSelect">
+                    <option disabled selected value="default">Choose a hero!</option>
+                    <?php foreach ($heroesList as $person) : ?>
+                        <option value="<?= $person->name ?>" name="personName"><?= $person->name ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+        </div>
+    </form>
+    <div class="table-wrapper">
+        <table class="heros">
+            <thead>
+            <tr>
+                <th>Superhero name</th>
+                <th>Real name</th>
+                <th>Location</th>
+                <th>Real superhero?</th>
+                <th>Good/Bad</th>
+                <th>Score</th>
+                <th>Image</th>
+            </tr>
+            </thead>
+            <tbody>
+            <?php foreach ($heroesList as $hero) : ?>
                 <tr>
-                    <th>Superhero name</th>
-                    <th>Real name</th>
-                    <th>Location</th>
-                    <th>Real superhero?</th>
-                    <th>Good/Bad</th>
-                    <th>Score</th>
-                    <th>Image</th>
+                    <td><?= $hero->name ?></td>
+                    <td><?= $hero->realName ?></td>
+                    <td><?= $hero->location ?></td>
+                    <td><?= $hero->isRealHero ?></td>
+                    <td><?= $hero->state ?></td>
+                    <td><?= $hero->score ?></td>
+                    <td><?php echo "<a data-fancybox=\"gallery\" href=\"" . $hero->thumb . "\" class=\"thumbnail\"><img src = " . $hero->thumb . "></a>" ?></td>
                 </tr>
-                </thead>
-                <tbody>
-                <?php foreach ($heroesList as $hero) : ?>
-                    <tr>
-                        <td><?= $hero->name ?></td>
-                        <td><?= $hero->realName ?></td>
-                        <td><?= $hero->location ?></td>
-                        <td><?= $hero->isRealHero ?></td>
-                        <td><?= $hero->state ?></td>
-                        <td><?= $hero->score ?></td>
-                        <td><?php echo "<a data-fancybox=\"gallery\" href=\"" . $hero->thumb . "\" class=\"thumbnail\"><img src = " . $hero->thumb . "></a>" ?></td>
-                    </tr>
-                <?php endforeach; ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="form-buttons">
-            <form>
-                <input type="button" value="Add hero">
-            </form>
-            <form>
-                <input type="button" value="Delete hero">
-            </form>
-        </div>
+            <?php endforeach; ?>
+            </tbody>
+        </table>
     </div>
 </main>
 <footer>
