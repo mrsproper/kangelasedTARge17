@@ -23,6 +23,7 @@ body {
   line-height: 20px;
   color: #333;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 h1,
@@ -89,16 +90,16 @@ header {
 
 /* ---- Danger generation ---- */
 .situation-generator {
-    display: flex;
+  display: flex;
 }
 
-.situation{
-    padding: 0px 0px 20px 20px;
-    text-align: center;
-    line-height: 30px;
+.situation {
+  padding: 0px 0px 20px 20px;
+  text-align: center;
+  line-height: 30px;
 }
 .situation-hero {
-    margin: 15px 40px;
+  margin: 15px 40px;
 }
 
 /* ---- Tabeli stiilid ---- */
@@ -141,9 +142,9 @@ table tbody tr:hover {
 
 /* ---- Footer ---- */
 
-footer {
+.footer {
   display: flex;
-  padding: 0.2rem;
+  padding: 1rem 0;
   background-color: #e60000;
   text-align: center;
   justify-content: space-between;
@@ -164,7 +165,7 @@ footer {
 
 /* ---- Form buttons ---- */
 .form-buttons {
-    display: flex;
+  display: flex;
 }
 
 /* ---- Misc ---- */
@@ -181,13 +182,12 @@ footer {
   transition: all 0.2s ease;
 }
 
-.situation-hero select{
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 15px;
-    background-color: #e2e2e2;
-    border: none;
-    
+.situation-hero select {
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 15px;
+  background-color: #e2e2e2;
+  border: none;
 }
 
 #generate-situation:hover {
@@ -195,12 +195,12 @@ footer {
   color: #fff;
 }
 
-#answerDiv{
-    font-size: 20px;
+#answerDiv {
+  font-size: 20px;
 }
 
-#peopleInvolved{
-    font-size: 30px;
+#peopleInvolved {
+  font-size: 30px;
 }
 
 #savingButton {
@@ -220,10 +220,105 @@ footer {
   color: #fff;
 }
 
+/* ---- Heroes list ---- */
+
+.heroes-list {
+}
+.hero-item {
+  padding: 20px 0;
+  border-top: 1px solid #333;
+}
+.hero-item:last-child {
+  border-bottom: 1px solid #333;
+}
+.hero-item__header {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero-item__header .hero--toggle {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 24px;
+}
+.hero-item__header .hero--toggle i {
+  transition: all 0.2s ease;
+  transform-origin: center;
+}
+.hero-item__header .hero--toggle.open i {
+  transform: rotate(180deg);
+}
+.hero-item__header .thumbnail {
+  max-width: 100px;
+  margin-right: 20px;
+}
+.hero-item__header .thumbnail img {
+  width: 100%;
+  height: auto;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.hero-item__header .hero--name {
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: 700;
+}
+.hero-item__body {
+  display: none;
+  margin-top: 20px;
+}
+.hero-item__body p {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.hero-item__body p span {
+  display: block;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
 /* ---- Responsive ---- */
 
 @media only screen and (max-width: 767px) {
   .table-wrapper {
     overflow: auto;
+  }
+  .header-images img:not(:first-child):not(:last-child) {
+    display: none;
+  }
+  .footer {
+    justify-content: center;
+  }
+  .footer > img {
+    display: none;
+  }
+  .situation-generator {
+    flex-direction: column;
+  }
+  .situation {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  .situation-hero {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  .hero-item__header .hero--name {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  table tr {
+    display: flex;
+    flex-direction: column;
   }
 }

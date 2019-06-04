@@ -1,8 +1,8 @@
 <?php
 $serveriNimi="localhost";
-$kasutajaNimi="root";
-$parool="";
-$andmebaas="test";
-$yhendus = new mysqli($serveriNimi, $kasutajaNimi, $parool, $andmebaas);
-$yhendus->set_charset("utf8");
+$kasutajaNimi="ceiro";
+$parool="kellkaheksa88";
+$andmebaas="kangelased";
+$connection = new mysqli($serveriNimi, $kasutajaNimi, $parool, $andmebaas);
+$connection->set_charset("utf8");
 ?>

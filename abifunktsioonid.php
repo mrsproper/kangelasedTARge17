@@ -3,13 +3,13 @@ require("conf.php");
 
 function getHeroes()
 {
-    global $yhendus;
-    $kask = $yhendus->prepare("SELECT * FROM heroes");
-//echo $yhendus->error;
-    $kask->bind_result($id, $name, $real_name, $location, $is_real_hero, $state, $score, $thumb);
-    $kask->execute();
+    global $connection;
+    $query = $connection->prepare("SELECT * FROM heroes");
+//echo $connection->error;
+    $query->bind_result($id, $name, $real_name, $location, $is_real_hero, $state, $score, $thumb);
+    $query->execute();
     $heroes = array();
-    while ($kask->fetch()) {
+    while ($query->fetch()) {
         $hero = new stdClass();
         $hero->id = htmlspecialchars($id);
         $hero->name = htmlspecialchars($name);
@@ -21,45 +21,45 @@ function getHeroes()
         $hero->thumb = $thumb;
         array_push($heroes, $hero);
     }
-    $kask->close();
+    $query->close();
     return $heroes;
 }
 
 function addScore($heroName) {
-    global $yhendus;
-    $kask = $yhendus->prepare("UPDATE heroes SET score = score + 1 WHERE heroes.name = ?");
-    $kask->bind_param("s", $heroName);
-    echo $yhendus->error;
-    $kask->execute();
+    global $connection;
+    $query = $connection->prepare("UPDATE heroes SET score = score + 1 WHERE heroes.name = ?");
+    $query->bind_param("s", $heroName);
+    echo $connection->error;
+    $query->execute();
 
 }
 
 function addNewHero($name, $realName, $location, $isSuperHero, $status, $thumb)
 {
-    global $yhendus;
+    global $connection;
 
-    $kask = $yhendus->prepare("INSERT INTO heroes (name, real_name, location, is_real_hero, state, thumb)
+    $query = $connection->prepare("INSERT INTO heroes (name, real_name, location, is_real_hero, state, thumb)
        VALUES (?, ?, ?, ?, ?, ?)");
-    echo $yhendus->error;
-    $kask->bind_param("ssssss", $name, $realName, $location, $isSuperHero, $status, $thumb);
-    $kask->execute();
+    echo $connection->error;
+    $query->bind_param("ssssss", $name, $realName, $location, $isSuperHero, $status, $thumb);
+    $query->execute();
 }
 
 function deleteHero($id)
 {
-    global $yhendus;
-    $kask = $yhendus->prepare("DELETE FROM heroes WHERE id=?");
-//    echo $yhendus->error;
-    $kask->bind_param("i", $id);
-    $kask->execute();
+    global $connection;
+    $query = $connection->prepare("DELETE FROM heroes WHERE id=?");
+//    echo $connection->error;
+    $query->bind_param("i", $id);
+    $query->execute();
 }
 
 //---------------
-if (array_pop(explode("/", $_SERVER["PHP_SELF"])) == "abifunktsioonid.php"):
+/*if (array_pop(explode("/", $_SERVER["PHP_SELF"])) == "abifunktsioonid.php"):
     ?>
     <pre>
 <?php
 print_r(getHeroes());
 ?>
 </pre>
-<?php endif ?>
+<?php endif ?>*/
