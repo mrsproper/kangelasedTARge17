@@ -10,14 +10,29 @@ $(function() {
     "Lost",
     "Sickness"
   ];
+    
+function randomSituationGenerator() {
+    $("#answerDiv").text(
+	answerArray[Math.floor(Math.random() * answerArray.length)]
+	);
+	peopleCount = Math.floor(Math.random() * 11 + 1);
+	$("#peopleInvolved").text(peopleCount);
+    
+}
+randomSituationGenerator();
+    
+function automaticSituation(){
+    setInterval(function(){ 
+		randomSituationGenerator();
+		}, 5000);
+}
+    
+document.getElementById("savingButton").style.display = "inline-block";
+automaticSituation();    
 
   $("#generate-situation").on("click", function(e) {
     e.preventDefault();
-    $("#answerDiv").text(
-      answerArray[Math.floor(Math.random() * answerArray.length)]
-    );
-    peopleCount = Math.floor(Math.random() * 11 + 1);
-    $("#peopleInvolved").text(peopleCount);
+    randomSituationGenerator();
     document.getElementById("savingButton").style.display = "inline-block";
   });
 
