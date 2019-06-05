@@ -1,5 +1,5 @@
 <?php
-require("conf.php");
+require("../../conf.php");
 require("abifunktsioonid.php");
 
 $heroesList = getHeroes();
